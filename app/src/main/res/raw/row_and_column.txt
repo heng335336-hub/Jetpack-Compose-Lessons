@@ -1,0 +1,9 @@
++ Row(horizontalArrangement = Arrangement.SpaceBetween) { }  ///Dork klea pi knea
++ Column(verticalArrangement = Arrangement.Center) { }
+
+Options: Start, End, Center, SpaceBetween, SpaceAround, SpaceEvenly, Top/Bottom (for Column)
+
++ Row(verticalAlignment = Alignment.CenterVertically) { }   ///Chor tam line
++ Column(horizontalAlignment = Alignment.CenterHorizontally) { }
+
+Options: Top, CenterVertically, Bottom (Row) / Start, CenterHorizontally, End (Column)

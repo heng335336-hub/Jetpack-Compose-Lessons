@@ -1,0 +1,52 @@
+//Normal Column
+
+val scroller = rememberScrollState()
+Column(modifier = Modifier.padding(innerPadding) .fillMaxWidth() .verticalScroll(scroller), horizontalAlignment = Alignment.CenterHorizontally){
+    for(i in 1 ..50){
+        Text(text = "Helloi $i")
+    }
+}
+
+=========================================================
+
+//LazyColumn
+
+LazyColumn(modifier = Modifier.fillMaxWidth() . padding(innerPadding), horizontalAlignment = Alignment.CenterHorizontally){
+            items(100){
+                Text(
+                    text = "Hello $it",
+                    fontFamily = comicrelief,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp,
+                    fontStyle = FontStyle.Italic,
+                    textDecoration = TextDecoration.Underline,
+                    color = Color.Blue
+                    )
+            }
+        }
+
+===========================================================
+
+//Index Column
+
+LazyColumn(modifier = Modifier.fillMaxWidth() . padding(innerPadding) , horizontalAlignment = Alignment.CenterHorizontally){
+            itemsIndexed(
+                listOf("Today", "I", "don't", "feel", "like", "doing", "anything")
+            ){ index , String ->
+                Text(
+                    text = String + " " + index,
+                    color = Color.Blue,
+                    fontFamily = comicrelief,
+                    fontWeight = FontWeight.Bold,
+                    fontStyle = FontStyle.Italic,
+                    fontSize = 20.sp,
+                    textDecoration = TextDecoration.Underline)
+            }
+        }
+
+--------------------------------------------
+*** NOTE ***
+LazyColumn or LazyRow can't put a normal compose like button..etc we need items(count: n){ Button }
+wrap it form outside
+
+example : items { button }

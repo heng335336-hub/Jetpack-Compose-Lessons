@@ -1,0 +1,15 @@
+// Rectangle (default, sharp corners)
+RectangleShape
+
+// Circle
+CircleShape
+
+// Rounded corners
+RoundedCornerShape(8.dp)                          // all corners same
+RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp, bottomStart = 0.dp, bottomEnd = 0.dp) // individual corners
+RoundedCornerShape(percent = 50)                   // percentage-based (pill shape)
+
+// Cut corners (angled/beveled)
+CutCornerShape(8.dp)
+CutCornerShape(topStart = 16.dp, bottomEnd = 16.dp)
+CutCornerShape(percent = 50)

@@ -1,0 +1,45 @@
+@Composable
+fun Constrain_Layout(){
+    Scaffold{ innerPadding ->
+        ConstraintLayout(constraintSet = ConstraintSet_Func(), modifier = Modifier .padding(innerPadding) .fillMaxSize()){
+            Box(modifier = Modifier.layoutId("box1") .background(Color.Red)){
+                Text("Box1", color = Color.White)
+            }
+            Box(modifier = Modifier.layoutId("box2") .background(Color.Blue)){
+                Text("Box2", color = Color.White)
+            }
+        }
+    }
+}
+
+@Composable
+fun ConstraintSet_Func() : ConstraintSet {
+    return ConstraintSet{
+        var box1 = createRefFor("box1")
+        var box2 = createRefFor("box2")
+
+        constrain(box1){
+            top.linkTo(parent.top)
+            start.linkTo(parent.start)
+            width = Dimension.value(90.dp)
+            height = Dimension.value(90.dp)
+        }
+
+        constrain(box2){
+            top.linkTo(parent.top)
+            start.linkTo(box1.start, margin = 90.dp)
+            end.linkTo(parent.end)
+            width = Dimension.fillToConstraints
+            height = Dimension.value(90.dp)
+        }
+    }
+}
+
+
+Blue start link to box1.start and link to end start
+Screen edge       blue box        Screen edge
+|------------------BOX------------------|
+if we remove red box and margin of blue box the blue box fill width from start to end
+
+Screen edge      blue box =        Screen edge
+|=====================================|

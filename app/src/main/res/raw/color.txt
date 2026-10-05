@@ -1,0 +1,11 @@
++ Background
+Modifier.background(Color.Red)
+Modifier.background(Color(0xFF6200EE))
+Modifier.background(Color(24,43,54,1f)
+
++ Scaffold
+Scaffold(containerColor = Color.White) { }
+
++Text
+Text("Hello", color = Color.Black)
+Text("Hello", style = TextStyle(color = Color.Blue))
