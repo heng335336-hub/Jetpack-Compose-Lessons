@@ -1,0 +1,31 @@
+val animate_size_red by animateDpAsState(
+            targetValue = max_size_red,
+            tween(
+                delayMillis = 1000,  //Wait before run
+                durationMillis = 1000, //How long to run
+                easing = LinearEasing //Linear = no speed and slow, fastout = fast first
+            )
+        )
+
+        val animate_size_blue by animateDpAsState(
+            max_size_blue,
+            spring(
+                0.2f, //bouncy //value < 0.3 = speed of expand and bounc
+                Spring.StiffnessMedium //speed of motio (this one is slow motion medium lelvel)
+            )
+        )
+
+        val animate_size_green by animateDpAsState(
+            max_size_green,
+            keyframes{
+                delayMillis = 100 //delay before it work
+                durationMillis = 4000 //duration 4s
+
+                0.dp at 0 //first, o.dp at 0s of durationMillis,
+                200.dp at 2000 //box must reach 200.dp when durationMillis reach 2000ms
+                300.dp at 3000 //box must reach 300.dp when durationMillis reach 3000ms
+                400.dp at 4000 //box must reach 400.dp when durationMillis reach 4000ms
+                //400.dp ? because original max_size_green = 200, button make it plus more 200
+                //sp, total 400
+            }
+        )

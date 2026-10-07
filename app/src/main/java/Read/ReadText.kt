@@ -75,6 +75,7 @@ fun TextFileScreen(Id : Int) {
                     Text(text = "$font_Size")
                 }
 
+
             }
         }
 

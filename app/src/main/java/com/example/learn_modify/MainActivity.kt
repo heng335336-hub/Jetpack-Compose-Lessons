@@ -180,7 +180,7 @@ class MainActivity : ComponentActivity() {
                     }
 
                     if(canvas_bool.value){
-                        canvas()
+                        circular_progress_bar()
                     }
 
                     ///////////////////////////////////////////////////////
@@ -212,7 +212,7 @@ fun page() {
         Column(modifier = Modifier .fillMaxWidth() , horizontalAlignment = Alignment.CenterHorizontally){ PageButtonSetter("Color_Box", { Color_box_bool.value = true } , "Box with random() color", 0.5f, Modifier.fillMaxWidth()) }
         Column(modifier = Modifier .fillMaxWidth() , horizontalAlignment = Alignment.CenterHorizontally){ PageButtonSetter("Side_Effect", { side_effect_bool.value = true } , "N/A Not done", 0.3f, Modifier.fillMaxWidth()) }
         Column(modifier = Modifier .fillMaxWidth() , horizontalAlignment = Alignment.CenterHorizontally){ PageButtonSetter("size_animate", { size_animate_bool.value = true } , "tween, spring, keyframes", 0.6f, Modifier.fillMaxWidth()) }
-        Column(modifier = Modifier .fillMaxWidth() , horizontalAlignment = Alignment.CenterHorizontally){ PageButtonSetter("Canvas", { size_animate_bool.value = true } , "", 0.3f, Modifier.fillMaxWidth()) }
+        Column(modifier = Modifier .fillMaxWidth() , horizontalAlignment = Alignment.CenterHorizontally){ PageButtonSetter("Canvas", { canvas_bool.value = true } , "", 0.3f, Modifier.fillMaxWidth()) }
 
     }
 }
@@ -321,6 +321,18 @@ fun read(){
                 fontWeight = FontWeight.Normal,
                 textDecoration = TextDecoration.Underline,
                 modifier = Modifier.clickable { read_bool.value = true; content_Id.value = R.raw.shape }
+            )
+        }
+
+        Column(modifier = Modifier.fillMaxWidth() .clickable { read_bool.value = true; content_Id.value = R.raw.shape } .height(50.dp) .border(1.dp, Color(136, 0, 255, 255)), verticalArrangement = Arrangement.Center) {
+            Text(
+                text = "Animate Dp As State",
+                color = Color.Magenta,
+                fontSize = 20.sp,
+                fontFamily = comicrelief,
+                fontWeight = FontWeight.Normal,
+                textDecoration = TextDecoration.Underline,
+                modifier = Modifier.clickable { read_bool.value = true; content_Id.value = R.raw.animate_dp_as_state }
             )
         }
     }
